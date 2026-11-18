@@ -1,41 +1,41 @@
 :root{--vinho:#3a090d;--bordo:#7a1a1a;--ouro:#d6a93c;--claro:#f0cf7a;--laranja:#e07a2f;--papel:#fbf8f1;--linha:#e2d4b8;--tinta:#2a1412;--suave:#6b4a40}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;overflow-x:hidden;background:var(--papel);color:var(--tinta);font:1.1rem/1.6 "Alegreya Sans",system-ui,sans-serif}
-h1,h2,h3{font-family:Alegreya,Georgia,serif;color:var(--vinho);line-height:1.15}
-h2{font-size:1.8rem;margin:2.6rem 0 1rem;padding-bottom:.4rem;border-bottom:1px solid var(--linha)}h3{font-size:1.35rem;margin:.1rem 0 .3rem}
-main>h1{font-size:2.5rem;margin:1.8rem 0 .4rem}a{color:var(--bordo)}:focus-visible{outline:3px solid var(--laranja);outline-offset:2px}
+body{margin:0;overflow-x:hidden;background:var(--papel);color:var(--tinta);font:1.2rem/1.55 "Crimson Pro",Georgia,serif}
+h1,h2,h3{font-weight:700;font-family:"Cormorant Garamond",Georgia,serif;color:var(--vinho);line-height:1.15}
+h2{font-size:2.2rem;margin:2.6rem 0 1rem;padding-bottom:.4rem;border-bottom:1px solid var(--linha)}h3{font-size:1.6rem;margin:.1rem 0 .3rem}
+main>h1{font-size:3rem;margin:1.8rem 0 .4rem}a{color:var(--bordo)}:focus-visible{outline:3px solid var(--laranja);outline-offset:2px}
 .skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:9}
 .hd{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;background:var(--vinho);padding:.4rem 1.2rem;border-bottom:2px solid var(--ouro)}
-.brand{display:flex;align-items:center;gap:.6rem;color:var(--claro);text-decoration:none;font:700 1.35rem Alegreya,serif}.brand img{height:44px;width:auto}.brand span span{color:#fff}
-#mb{display:none;background:none;border:1px solid var(--ouro);color:var(--claro);font-size:1.4rem;min-width:44px;min-height:44px;border-radius:6px}
+.brand{display:flex;align-items:center;gap:.6rem;color:var(--claro);text-decoration:none;font:700 1.6rem "Cormorant Garamond",serif}.brand img{height:44px;width:auto}.brand span span{color:#fff}
+#mb{display:none;background:none;border:1px solid var(--ouro);color:var(--claro);font-size:1.4rem;min-width:44px;min-height:44px;border-radius:2px}
 #nv{display:flex;gap:.2rem;flex-wrap:wrap}#nv a{color:#f3e4c4;text-decoration:none;padding:.6rem .75rem;border-bottom:3px solid transparent}#nv a:hover{color:var(--claro)}#nv a[aria-current]{border-bottom-color:var(--ouro);color:#fff}
 main{max-width:1100px;margin:0 auto;padding:0 1.2rem 1rem}
 .hero{width:100vw;margin:0 0 1rem calc(50% - 50vw);padding:3.5rem 1.2rem 6rem;color:#f3e4c4;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 90' preserveAspectRatio='none'%3E%3Cpath d='M0 62C180 14 330 88 560 52S980 6 1200 58V90H0Z' fill='%23fbf8f1'/%3E%3C/svg%3E") bottom/100% 70px no-repeat,radial-gradient(ellipse at 72% 100%,#e07a2fcc,#7a1a1a 38%,transparent 68%),var(--vinho)}
 .hero-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}.hero-in>div:first-child{flex:1 1 340px}
-.hero h1{color:#fff;font-size:clamp(2.3rem,6vw,4rem);margin:.2rem 0 .8rem}.hero p{max-width:50ch}.lema{color:var(--claro);font-style:italic;font-family:Alegreya,serif;font-size:1.2rem}
+.hero h1{color:#fff;font-size:clamp(2.6rem,7vw,4.8rem);margin:.2rem 0 .8rem}.hero p{max-width:50ch}.lema{color:var(--claro);font-style:italic;font-family:"Cormorant Garamond",serif;font-size:1.4rem}
 .logos{display:flex;align-items:center;gap:1.5rem}.logos img{max-height:270px;max-width:100%;width:auto}.logos img+img{max-height:230px}img[hidden]{display:none}
-.btn{display:inline-block;min-height:44px;padding:.55rem 1.2rem;margin:.3rem .4rem .3rem 0;border-radius:6px;background:var(--bordo);color:#fff;text-decoration:none;border:2px solid var(--bordo);font:700 1rem "Alegreya Sans",sans-serif;cursor:pointer}
+.btn{display:inline-block;min-height:44px;padding:.55rem 1.2rem;margin:.3rem .4rem .3rem 0;border-radius:2px;background:var(--bordo);color:#fff;text-decoration:none;border:2px solid var(--bordo);font:700 1rem "Crimson Pro",serif;cursor:pointer}
 .btn.gold{background:var(--ouro);border-color:var(--ouro);color:var(--vinho)}.btn.ghost{background:none;border-color:#f3e4c4aa;color:#f3e4c4}.btn:hover{background:var(--vinho);border-color:var(--vinho);color:var(--claro)}
 .grid{display:grid;gap:0 2.5rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,430px),1fr))}
 .ev{display:grid;grid-template-columns:78px 1fr;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--linha);border-left:4px solid var(--c,var(--ouro));padding-left:1rem}
-.ev time{text-align:center;font-family:Alegreya,serif;color:var(--bordo);line-height:1}.ev time b{display:block;font-size:2.6rem}.ev time small{display:block;font:.8rem "Alegreya Sans",sans-serif;color:var(--suave);margin-top:.3rem}
+.ev time{text-align:center;font-family:"Cormorant Garamond",serif;color:var(--bordo);line-height:1}.ev time b{display:block;font-size:3.1rem}.ev time small{display:block;font:.8rem "Crimson Pro",serif;color:var(--suave);margin-top:.3rem}
 dl{margin:.3rem 0}dl div{display:flex;gap:.6rem}dt{color:var(--suave);min-width:5.2rem}dd{margin:0}
 .aviso{font-style:italic;color:var(--laranja)}
-.nota,.doc,.cap{padding:1.1rem 0;border-bottom:1px solid var(--linha)}.nota header{display:flex;gap:1rem;color:var(--suave)}.nota p{max-width:62ch}.nota img{max-width:100%;border-radius:6px}
-.tag{color:var(--bordo);font-weight:700;margin-right:.7rem}.tag.ex{border:1px dashed var(--ouro);padding:0 .5rem;border-radius:4px;font-weight:400}.st{color:var(--suave);font-style:italic}
-.cap{display:grid;grid-template-columns:5.2rem 1fr auto;gap:1rem;align-items:start}.num{font:700 2.6rem/1 Alegreya,serif;color:var(--c)}.logo{max-height:80px}
-.proj{border:1px solid var(--linha);border-radius:8px;padding:1.2rem;margin:0 0 1.2rem;background:#fff}.proj.star{border:2px solid var(--ouro)}.proj img{max-width:100%;border-radius:6px}
+.nota,.doc,.cap{padding:1.1rem 0;border-bottom:1px solid var(--linha)}.nota header{display:flex;gap:1rem;color:var(--suave)}.nota p{max-width:62ch}.nota img{max-width:100%;border-radius:2px}
+.tag{color:var(--bordo);font-weight:700;margin-right:.7rem;letter-spacing:.02em}.tag.ex{border:1px dashed var(--ouro);padding:0 .5rem;border-radius:4px;font-weight:400}.st{color:var(--suave);font-style:italic}
+.cap{display:grid;grid-template-columns:5.2rem 1fr auto;gap:1rem;align-items:start}.num{font:700 3.2rem/1 "Cormorant Garamond",serif;color:var(--c)}.logo{max-height:80px}
+.proj{border:1px solid var(--linha);border-radius:3px;padding:1.2rem;margin:0 0 1.2rem;background:#fff}.proj.star{border:2px solid var(--ouro)}.proj img{max-width:100%;border-radius:2px}
 .doc{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
 .meta{color:var(--suave);margin:.2rem 0}.empty{padding:1rem 1.2rem;border-left:4px solid var(--ouro);background:#f6efdf;max-width:70ch}
-.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:0}.strip div{display:block;padding:.3rem 1.2rem;border-left:1px solid var(--linha)}.strip div:first-child{border:0;padding-left:0}.strip dd{font:700 2.2rem/1.1 Alegreya,serif;color:var(--bordo)}.strip dt{min-width:0}
-.flt{display:block;margin:1rem 0}select{min-height:44px;padding:0 .6rem;font:inherit;border-radius:6px;border:1px solid var(--suave);background:#fff}
-.leg{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font-size:.95rem}.leg span{display:flex;align-items:center;gap:.4rem}.leg i{width:12px;height:12px;border-radius:50%;background:var(--c)}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:0}.strip div{display:block;padding:.3rem 1.2rem;border-left:1px solid var(--linha)}.strip div:first-child{border:0;padding-left:0}.strip dd{font:700 2.6rem/1.1 "Cormorant Garamond",serif;color:var(--bordo)}.strip dt{min-width:0}
+.flt{display:block;margin:1rem 0}select{min-height:44px;padding:0 .6rem;font:inherit;border-radius:2px;border:1px solid var(--suave);background:#fff}
+.leg{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font-size:.95rem}.leg span{display:flex;align-items:center;gap:.4rem}.leg i{width:12px;height:12px;border-radius:0;background:var(--c)}
 #grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--linha);border:1px solid var(--linha);margin:1rem 0}.dh{background:var(--vinho);color:var(--claro);text-align:center;font-weight:700}
 #grid>div:not(.dh){background:var(--papel);min-height:84px;padding:4px;font-size:.8rem;overflow:hidden}#grid>div:empty{background:#f1e9d8}.day.hoje{background:#fff1c9!important}
 .day a{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-left:3px solid var(--c);padding-left:4px;margin-top:2px;text-decoration:none;color:var(--tinta)}
 .calbar{display:flex;align-items:center;gap:1rem;margin-top:1rem}.calbar h2{flex:1;text-align:center;text-transform:capitalize;margin:0;border:0}
-.ph{border:0;padding:0;background:none;cursor:pointer;text-align:left;margin-bottom:1rem}.ph img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:6px}.ph span{display:block;padding-top:.3rem}
-dialog{max-width:min(900px,95vw);border:0;border-radius:8px}dialog img{max-width:100%}
+.ph{border:0;padding:0;background:none;cursor:pointer;text-align:left;margin-bottom:1rem}.ph img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:2px}.ph span{display:block;padding-top:.3rem}
+dialog{max-width:min(900px,95vw);border:0;border-radius:3px}dialog img{max-width:100%}
 iframe{width:100%;height:900px;border:0;background:#fff}
 .ft{background:var(--vinho);color:#f3e4c4;text-align:center;padding:1.5rem 1rem;margin-top:3rem;border-top:2px solid var(--ouro)}.ft a{color:var(--claro)}
 @media(max-width:760px){#mb{display:block}#nv{display:none;width:100%;flex-direction:column}#nv.open{display:flex}.hero{padding-bottom:5rem}.logos img{max-height:170px}.logos img+img{max-height:150px}#grid>div:not(.dh){min-height:54px}.day a{font-size:0;height:6px;background:var(--c);border:0;margin-top:3px;border-radius:3px}.cap{grid-template-columns:4rem 1fr}.cap .logo{display:none}iframe{height:1100px}}
