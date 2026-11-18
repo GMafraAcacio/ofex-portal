@@ -11,11 +11,15 @@ O site lê a aba **LISTA GERAL** da planilha Geral (https://docs.google.com/spre
 ## 2. Formulário (Google Forms)
 Crie um Forms com: Nome (opcional), Capítulo, Categoria (Sugestão/Dúvida/Reclamação), Assunto, Descrição, E-mail (opcional). Enviar → copiar link → colar em `formUrl` no `config.js`. Vincule as respostas a uma planilha e compartilhe com a administração.
 
-## 3. Conteúdos (arquivos em `data/`)
-No GitHub: abra o arquivo → ícone de lápis → edite → "Commit changes". Copie um registro, cole após uma vírgula e altere. Apague os registros com `"exemplo": true`.
-- `comunicados.json`: titulo, data (AAAA-MM-DD), categoria, texto, imagem, alt, anexo
+## 3. Comunicados e projetos (planilha "Portal_OFEX_Conteudo")
+Planilha: https://docs.google.com/spreadsheets/d/1bzDTMVvp31H4gLiAGlPtDXRwpBkTm7pz1VJ4_FJY7B0
+- Abas COMUNICADOS e PROJETOS: uma linha por item. Só aparece no site o que tem **Publicar = Sim**. Não renomeie abas nem cabeçalhos.
+- Compartilhar como "Qualquer pessoa com o link" → Leitor; editores só da administração.
+- Links de imagem/anexo: arquivos do Drive com acesso por link. Para trocar de planilha, altere `conteudoSheetId` em `assets/js/config.js`.
+- Se a planilha ficar inacessível, o site usa os arquivos `data/comunicados.json` e `data/projetos.json` como reserva.
+
+## 3b. Documentos, galeria e Capítulos (arquivos em `data/`)
 - `capitulos.json`: nome, numero, cidade, apresentacao, logo, instagram, facebook, email
-- `projetos.json`: nome, categoria, objetivo, descricao, inicio, prazo, capitulos, situacao, resultados, destaque, imagens, documentos [{titulo,url}]
 - `documentos.json`: titulo, categoria, atualizado, url (PDF no Drive com acesso por link, ou link externo)
 - `galeria.json`: evento, categoria, data, legenda, alt, url (imagem em `assets/images/` ou link direto)
 Use apenas dados fornecidos e autorizados. Valide o JSON em jsonlint.com.

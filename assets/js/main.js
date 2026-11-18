@@ -3,7 +3,16 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt
 const fmt = d => d ? new Date(d + "T12:00").toLocaleDateString("pt-BR") : "";
 const u = x => /^https?:\/\//.test(x || "") ? x : "";
 const im = x => /^(https?:\/\/|assets\/)/.test(x || "") ? x : "";
-const load = n => fetch("data/" + n + ".json").then(r => r.json()).catch(() => []);
+const json = n => fetch("data/" + n + ".json").then(r => r.json()).catch(() => []);
+const col = (r, p) => { const k = Object.keys(r).find(x => x.startsWith(p)); return k ? r[k] : ""; };
+const dimg = x => { const m = /\/d\/([\w-]+)|[?&]id=([\w-]+)/.exec(x || ""); return /drive\.google\.com/.test(x || "") && m ? `https://drive.google.com/thumbnail?id=${m[1] || m[2]}&sz=w1200` : x; };
+const sim = r => /^s/i.test(col(r, "publicar"));
+const ABA = {
+  comunicados: ["COMUNICADOS", r => ({ titulo: col(r, "titulo"), data: pd(col(r, "data")), categoria: col(r, "categoria"), texto: col(r, "texto"), imagem: dimg(col(r, "imagem")), alt: col(r, "titulo"), anexo: col(r, "anexo") })],
+  projetos: ["PROJETOS", r => ({ nome: col(r, "nome"), categoria: col(r, "categoria"), situacao: col(r, "situacao"), objetivo: col(r, "objetivo"), descricao: col(r, "descricao"), inicio: pd(col(r, "inicio")), prazo: pd(col(r, "prazo")), capitulos: col(r, "capitulos").split(",").map(x => x.trim()).filter(Boolean), resultados: col(r, "resultados"), destaque: /^s/i.test(col(r, "destaque")), imagens: col(r, "imagem") ? [dimg(col(r, "imagem"))] : [], documentos: col(r, "documento (l") ? [{ titulo: col(r, "documento (t") || "Documento", url: col(r, "documento (l") }] : [] })]
+};
+// comunicados e projetos vêm da planilha Portal_OFEX_Conteudo; se ela falhar, usa os arquivos em data/
+const load = async n => { if (ABA[n] && C.conteudoSheetId) { const rows = await getAba(C.conteudoSheetId, ABA[n][0]); if (rows) return rows.filter(sim).map(ABA[n][1]).filter(x => x.titulo || x.nome); } return json(n); };
 const byDate = (a, b) => (b.data || b.atualizado || "").localeCompare(a.data || a.atualizado || "");
 const ex = i => i.exemplo ? '<span class="tag ex">Exemplo de estrutura</span>' : "";
 const lk = (h, t) => u(h) ? `<a class="btn" href="${u(h)}" target="_blank" rel="noopener">${t}</a>` : "";

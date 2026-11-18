@@ -14,6 +14,13 @@
       else if (ch == "\n" || ch == "\r") { if (ch == "\r" && t[i+1] == "\n") i++; row.push(c); r.push(row); row = []; c = ""; }
       else c += ch; }
     row.push(c); r.push(row); return r; }
+  window.pd = pd;
+  // Lê uma aba de qualquer planilha pública como lista de objetos (chaves = cabeçalhos sem acento/minúsculos). Falha → null.
+  window.getAba = (id, aba) => fetch(`https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:csv&headers=0&sheet=${encodeURIComponent(aba)}`)
+    .then(r => { if (!r.ok) throw 0; return r.text(); })
+    .then(t => { const [h, ...rows] = csv(t); const ks = h.map(nk); if (!ks.includes("publicar")) throw 0;
+      return rows.filter(r => r.some(x => x.trim())).map(r => Object.fromEntries(ks.map((k, i) => [k, (r[i] || "").trim()]))); })
+    .catch(() => null);
   let cache;
   window.getEvents = () => cache || (cache = fetch(`https://docs.google.com/spreadsheets/d/${OFEX.sheetId}/gviz/tq?tqx=out:csv&headers=0&sheet=${encodeURIComponent(OFEX.sheetAba || "LISTA GERAL")}`)
     .then(r => { if (!r.ok) throw 0; return r.text(); })
